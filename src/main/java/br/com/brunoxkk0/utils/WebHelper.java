@@ -9,18 +9,6 @@ import java.nio.charset.StandardCharsets;
 
 public class WebHelper {
 
-    public boolean checkUrl(String url){
-        try{
-            HttpURLConnection.setFollowRedirects(false);
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(url).openConnection();
-
-            httpURLConnection.setRequestMethod("HEAD");
-            return httpURLConnection.getResponseCode() == 200;
-        } catch (IOException e) {
-            return false;
-        }
-    }
-
     public String post(String url, String query, String auth) {
         try {
 
