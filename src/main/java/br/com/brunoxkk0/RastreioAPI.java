@@ -1,43 +1,24 @@
 package br.com.brunoxkk0;
 
+import br.com.brunoxkk0.core.Rastreio;
+import br.com.brunoxkk0.core.SRO;
+import br.com.brunoxkk0.utils.InvalidRequestException;
 import br.com.brunoxkk0.utils.InvalidSroException;
-import br.com.brunoxkk0.utils.RastreioParser;
-import br.com.brunoxkk0.utils.WebHelper;
+import br.com.brunoxkk0.utils.RequestFactory;
+import br.com.brunoxkk0.utils.RequestProcessor;
 
 public class RastreioAPI {
 
-    private String sro;
-    private String events;
-    private String currentStatus;
+    private RastreioAPI(){}
 
-    public RastreioAPI(String sro) throws InvalidSroException {
-        if(!parseSro(sro)){
-            throw new InvalidSroException();
-        }
+    public static Rastreio getRastreio(String SRO) throws InvalidSroException, InvalidRequestException {
 
-        this.sro = sro;
+        SRO sro = new SRO(SRO);
 
-        WebHelper webHelper = new WebHelper();
-        RastreioParser rastreioParser = new RastreioParser(webHelper.post("https://www2.correios.com.br/sistemas/rastreamento/resultado_semcontent.cfm","objetos="+sro, "null"));
+        RequestFactory requestFactory = new RequestFactory();
+        RequestProcessor requestProcessor = new RequestProcessor(requestFactory.post(sro));
 
-        currentStatus = rastreioParser.getCurrentStatus();
-        events = rastreioParser.convert();
+        return new Rastreio(sro, requestProcessor.getEvents());
     }
 
-    private boolean parseSro(String sro){
-        String patten = "([A-Z]){2}([0-9]){9}([A-Z]){2}";
-        return sro.matches(patten);
-    }
-
-    public String getCurrentStatus() {
-        return currentStatus;
-    }
-
-    public String getEvents() {
-        return events;
-    }
-
-    public String getSro() {
-        return sro;
-    }
 }
