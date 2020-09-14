@@ -4,8 +4,8 @@ import java.util.LinkedHashSet;
 
 public class Rastreio {
 
-    SRO sro;
-    LinkedHashSet<Event> events;
+    private final SRO sro;
+    private final LinkedHashSet<Event> events;
 
     public Rastreio(SRO sro, LinkedHashSet<Event> events){
         this.sro = sro;

@@ -13,20 +13,22 @@ public class RequestProcessor {
 
     private  final LinkedHashSet<Event> events;
 
-    public RequestProcessor(byte[] data){
+    public RequestProcessor(byte[] data) throws InvalidSroException {
         Document document = Jsoup.parse(new String(data, StandardCharsets.UTF_8));
 
         Elements element = document.body().getElementsByClass("listEvent sro");
 
         events = new LinkedHashSet<>();
 
-        if(element != null){
+        if(element != null && !element.isEmpty()) {
             for (Element row : element.select("tr")) {
                 events.add(new Event(
                         row.getElementsByClass("sroDtEvent").text(),
                         row.getElementsByClass("sroLbEvent").text()
                 ));
             }
+        }else{
+            throw new InvalidSroException();
         }
 
     }

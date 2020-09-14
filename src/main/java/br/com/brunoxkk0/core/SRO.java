@@ -7,7 +7,6 @@ public class SRO {
 
     private final String sro;
 
-
     public SRO(String sro) throws InvalidSroException {
 
         if(sro == null || !SROParser.match(sro)) throw new InvalidSroException();
