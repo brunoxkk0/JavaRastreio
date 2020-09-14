@@ -1,6 +1,6 @@
-package br.com.brunoxkk0.utils;
+package br.com.brunoxkk0.jrastreio.utils;
 
-import br.com.brunoxkk0.core.SRO;
+import br.com.brunoxkk0.jrastreio.core.SRO;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

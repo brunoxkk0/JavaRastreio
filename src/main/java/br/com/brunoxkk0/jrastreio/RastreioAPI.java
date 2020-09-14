@@ -1,11 +1,11 @@
-package br.com.brunoxkk0;
+package br.com.brunoxkk0.jrastreio;
 
-import br.com.brunoxkk0.core.Rastreio;
-import br.com.brunoxkk0.core.SRO;
-import br.com.brunoxkk0.utils.InvalidRequestException;
-import br.com.brunoxkk0.utils.InvalidSroException;
-import br.com.brunoxkk0.utils.RequestFactory;
-import br.com.brunoxkk0.utils.RequestProcessor;
+import br.com.brunoxkk0.jrastreio.core.Rastreio;
+import br.com.brunoxkk0.jrastreio.core.SRO;
+import br.com.brunoxkk0.jrastreio.utils.InvalidRequestException;
+import br.com.brunoxkk0.jrastreio.utils.InvalidSroException;
+import br.com.brunoxkk0.jrastreio.utils.RequestFactory;
+import br.com.brunoxkk0.jrastreio.utils.RequestProcessor;
 
 public class RastreioAPI {
 

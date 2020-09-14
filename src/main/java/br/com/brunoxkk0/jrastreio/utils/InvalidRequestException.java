@@ -1,4 +1,4 @@
-package br.com.brunoxkk0.utils;
+package br.com.brunoxkk0.jrastreio.utils;
 
 public class InvalidRequestException extends Exception{
 

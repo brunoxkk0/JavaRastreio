@@ -1,6 +1,6 @@
-package br.com.brunoxkk0.utils;
+package br.com.brunoxkk0.jrastreio.utils;
 
-import br.com.brunoxkk0.core.Event;
+import br.com.brunoxkk0.jrastreio.core.Event;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

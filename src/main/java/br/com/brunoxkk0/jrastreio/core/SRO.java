@@ -1,7 +1,7 @@
-package br.com.brunoxkk0.core;
+package br.com.brunoxkk0.jrastreio.core;
 
-import br.com.brunoxkk0.utils.InvalidSroException;
-import br.com.brunoxkk0.utils.SROParser;
+import br.com.brunoxkk0.jrastreio.utils.InvalidSroException;
+import br.com.brunoxkk0.jrastreio.utils.SROParser;
 
 public class SRO {
 

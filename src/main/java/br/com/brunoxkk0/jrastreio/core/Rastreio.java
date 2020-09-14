@@ -1,4 +1,4 @@
-package br.com.brunoxkk0.core;
+package br.com.brunoxkk0.jrastreio.core;
 
 import java.util.LinkedHashSet;
 
